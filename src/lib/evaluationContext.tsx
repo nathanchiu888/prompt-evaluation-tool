@@ -46,7 +46,7 @@ const EvaluationContext = createContext<EvaluationContextType | undefined>(undef
 export function EvaluationProvider({ children }: { children: ReactNode }) {
   const [qualitativeData, setQualitativeData] = useState<QualitativeEvaluationData | null>(null);
   const [quantitativeData, setQuantitativeData] = useState<QuantitativeEvaluationData | null>(null);
-  const [activeTab, setActiveTab] = useState('qualitative');
+  const [activeTab, setActiveTab] = useState('quantitative');
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Load data from localStorage on mount

@@ -100,23 +100,9 @@ export default function LLMJudgeTool() {
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="qualitative">Qualitative Evaluation</TabsTrigger>
           <TabsTrigger value="quantitative">Quantitative Analysis</TabsTrigger>
+          <TabsTrigger value="qualitative">Qualitative Evaluation</TabsTrigger>
         </TabsList>
-        
-        <TabsContent value="qualitative" className="space-y-4">
-          <Card>
-            <CardHeader>
-              <CardTitle>Qualitative Prompt Optimization</CardTitle>
-              <CardDescription>
-                Test your prompts and get actionable feedback on how to optimize your system prompt and user prompt for better results.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <QualitativeEvaluation />
-            </CardContent>
-          </Card>
-        </TabsContent>
         
         <TabsContent value="quantitative" className="space-y-4">
           <Card>
@@ -128,6 +114,20 @@ export default function LLMJudgeTool() {
             </CardHeader>
             <CardContent>
               <QuantitativeEvaluation />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="qualitative" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Qualitative Prompt Optimization</CardTitle>
+              <CardDescription>
+                Test your prompts and get actionable feedback on how to optimize your system prompt and user prompt for better results.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <QualitativeEvaluation />
             </CardContent>
           </Card>
         </TabsContent>
