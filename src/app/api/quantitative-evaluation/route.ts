@@ -52,6 +52,7 @@ export async function POST(request: NextRequest) {
                 parsedOutput = JSON.parse(output);
               } catch (directParseError) {
                 // Try to extract JSON from markdown code blocks
+                console.log(directParseError);
                 const jsonMatch = output.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/);
                 if (jsonMatch && jsonMatch[1]) {
                   parsedOutput = JSON.parse(jsonMatch[1]);
@@ -240,11 +241,11 @@ function calculateStatistics(results: any[]) {
     'overallScore',
   ];
 
-  const languageMetrics = [
-    'fillerWordsPercentage',
-    'weakWordsPercentage',
-    'varietyScore',
-  ];
+  // const languageMetrics = [
+  //   'fillerWordsPercentage',
+  //   'weakWordsPercentage',
+  //   'varietyScore',
+  // ];
 
   const statistics: any = {};
 

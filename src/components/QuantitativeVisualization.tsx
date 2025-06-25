@@ -1,6 +1,6 @@
 'use client';
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import dynamic from 'next/dynamic';
 
@@ -18,10 +18,10 @@ interface StatisticalResults {
   range: number;
 }
 
-interface ChartData {
-  name: string;
-  value: number;
-}
+// interface ChartData {
+//   name: string;
+//   value: number;
+// }
 
 interface QuantitativeVisualizationProps {
   statistics: {
@@ -49,14 +49,14 @@ interface QuantitativeVisualizationProps {
 
 export default function QuantitativeVisualization({ statistics, rawResults }: QuantitativeVisualizationProps) {
   // Prepare data for score comparison chart
-  const scoreComparisonData: ChartData[] = [
-    { name: 'Communication', value: Number(statistics.communicationScore.mean.toFixed(2)) },
-    { name: 'Persuasiveness', value: Number(statistics.persuasivenessScore.mean.toFixed(2)) },
-    { name: 'Professionalism', value: Number(statistics.professionalismScore.mean.toFixed(2)) },
-    { name: 'Call Objective', value: Number(statistics.callObjectiveScore.mean.toFixed(2)) },
-    { name: 'Language Quality', value: Number(statistics.languageQualityScore.mean.toFixed(2)) },
-    { name: 'Overall', value: Number(statistics.overallScore.mean.toFixed(2)) },
-  ];
+  // const scoreComparisonData: ChartData[] = [
+  //   { name: 'Communication', value: Number(statistics.communicationScore.mean.toFixed(2)) },
+  //   { name: 'Persuasiveness', value: Number(statistics.persuasivenessScore.mean.toFixed(2)) },
+  //   { name: 'Professionalism', value: Number(statistics.professionalismScore.mean.toFixed(2)) },
+  //   { name: 'Call Objective', value: Number(statistics.callObjectiveScore.mean.toFixed(2)) },
+  //   { name: 'Language Quality', value: Number(statistics.languageQualityScore.mean.toFixed(2)) },
+  //   { name: 'Overall', value: Number(statistics.overallScore.mean.toFixed(2)) },
+  // ];
 
   // Prepare data for iteration trend chart
   const iterationTrendData = rawResults.map((result, index) => ({
@@ -70,11 +70,11 @@ export default function QuantitativeVisualization({ statistics, rawResults }: Qu
   }));
 
   // Prepare language analysis data
-  const languageAnalysisData: ChartData[] = [
-    { name: 'Filler Words %', value: Number(statistics.fillerWordsPercentage.mean.toFixed(2)) },
-    { name: 'Weak Words %', value: Number(statistics.weakWordsPercentage.mean.toFixed(2)) },
-    { name: 'Variety Score', value: Number(statistics.varietyScore.mean.toFixed(2)) },
-  ];
+  // const languageAnalysisData: ChartData[] = [
+  //   { name: 'Filler Words %', value: Number(statistics.fillerWordsPercentage.mean.toFixed(2)) },
+  //   { name: 'Weak Words %', value: Number(statistics.weakWordsPercentage.mean.toFixed(2)) },
+  //   { name: 'Variety Score', value: Number(statistics.varietyScore.mean.toFixed(2)) },
+  // ];
 
   function calculateq1(data: number[]): number {
     const sorted = [...data].sort((a, b) => a - b);

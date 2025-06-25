@@ -98,6 +98,7 @@ Please analyze the effectiveness of the system prompt and user prompt combinatio
                 evaluation = JSON.parse(evaluationContent);
             } catch (directParseError) {
                 // If direct parsing fails, try to extract JSON from markdown code blocks
+                console.log(directParseError);
                 const jsonMatch = evaluationContent.match(
                     /```(?:json)?\s*(\{[\s\S]*?\})\s*```/
                 );

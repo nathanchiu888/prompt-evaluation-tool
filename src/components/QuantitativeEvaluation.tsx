@@ -253,6 +253,7 @@ export default function QuantitativeEvaluation() {
                   setLoading(false);
                 }
               } catch (e) {
+                console.log(e);
                 // Ignore parsing errors for partial chunks
               }
             }
