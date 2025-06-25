@@ -1,5 +1,6 @@
 import LLMJudgeTool from '@/components/LLMJudgeTool';
 import { EvaluationProvider } from '@/lib/evaluationContext';
+import { Metadata } from 'next';
 
 export default function Home() {
   return (
@@ -18,3 +19,8 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Prompt Evaluation Tool",
+  description: "Evaluate your LLM outputs with qualitative and quantitative analysis",
+};
