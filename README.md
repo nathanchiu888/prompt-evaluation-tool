@@ -126,3 +126,7 @@ The tool is designed to work with LLM outputs that follow this JSON structure:
 - `/api/llm-output`: Generates LLM responses
 - `/api/qualitative-evaluation`: Provides qualitative analysis
 - `/api/quantitative-evaluation`: Performs multi-iteration quantitative analysis with streaming
+
+## Screenshots
+
+![Example](prompt-evaluation-tool-example.png "Example")
